@@ -1,5 +1,12 @@
 @import url(http://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic);
 
+html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
 body {
   color: #333;
   font-family:'Ubuntu',sans-serif;
@@ -7,7 +14,15 @@ body {
   background-color:#efefef;
 }
 
+#outer {height: 100%; overflow: hidden; position: relative; width: 100%;}
+#outer[id] {display: table; position: static;}
+
+#middle {position: absolute; top: 50%;} /* for quirk explorer only*/
+#middle[id] {display: table-cell; vertical-align: middle; width: 100%; position: static;}
+
 .main {
+  box-shadow:         7px 7px 5px rgba(50, 50, 50, 0.5);
+  border: 1px solid #e1e1e1;
   width:920px;
   margin:20px auto;
   margin-bottom:0;
