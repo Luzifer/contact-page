@@ -77,6 +77,18 @@ body {
   line-height:1.4em;
 }
 
+.contact p {
+  padding-left: 30px;
+}
+
+.contact p.img {
+  padding-left: 0;
+}
+
+.contact p .title {
+  margin-left: -15px;
+}
+
 .profileimg {
   border-radius:10px;
 }
