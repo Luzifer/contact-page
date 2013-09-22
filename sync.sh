@@ -1,5 +1,7 @@
 #!/bin/bash
 
+find . -name '.DS_Store' -delete
+
 minify style.css style.min.css
 s3cmd sync --exclude=".git/*" --exclude="images/*" --exclude="lib/*" --exclude="sync.sh" --exclude="style.css" -P ./ s3://www.knut.mp/
 rm style.min.css
