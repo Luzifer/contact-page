@@ -4,7 +4,9 @@ find . -name '.DS_Store' -delete
 
 mkdir rendered
 for template in $(find templates -name 'tpl_*'); do
-  swig render $template > rendered/$(basename $template | sed 's/tpl_//')
+  outfilename=$(basename $template | sed 's/tpl_//')
+  echo "Rendering ${outfilename}..."
+  swig render $template > rendered/$outfilename
 done
 minify style.css rendered/style.min.css
 
