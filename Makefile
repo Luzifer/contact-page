@@ -6,6 +6,8 @@ define swig_template
 		./node_modules/.bin/swig render $1 > rendered/$(subst tpl_,,$(notdir $1));
 endef
 
+default: test
+
 install_npm:
 		npm install swig minify
 
@@ -14,6 +16,9 @@ clean_npm:
 
 clean_prerun:
 		find . -name '.DS_Store' -delete
+
+clean_testing:
+		rm -rf ./testing/
 
 build_style: install_npm
 		./node_modules/.bin/minify style.css rendered/style.min.css
@@ -28,6 +33,13 @@ publish: render build_style
 		s3cmd sync -P --add-header="Expires:$(EXPIRY)" --delete-removed ./lib/ s3://$(BUCKET)/lib/
 		s3cmd sync -P --add-header="Expires:$(EXPIRY)" --delete-removed ./images/ s3://$(BUCKET)/images/
 
-clean: clean_npm clean_prerun
+clean: clean_npm clean_prerun clean_testing
 		rm -rf ./rendered/
 
+test: clean_testing render build_style
+		mkdir testing
+		rsync -ar ./rendered/ ./testing/
+		rsync -ar ./files/ ./testing/
+		rsync -ar ./lib/ ./testing/lib/
+		rsync -ar ./images/ ./testing/images/
+		cd ./testing/ && python -m SimpleHTTPServer 8000
