@@ -8,8 +8,8 @@ endef
 
 default: test
 
-install_npm:
-		npm install swig minify
+install_npm_%:
+		npm install $*
 
 clean_npm:
 		rm -rf ./node_modules/
@@ -20,11 +20,12 @@ clean_prerun:
 clean_testing:
 		rm -rf ./testing/
 
-build_style: install_npm
+build_style: install_npm_minify
+		mkdir -p ./rendered/
 		./node_modules/.bin/minify style.css rendered/style.min.css
 
-render: $(TEMPLATES) install_npm
-		mkdir -p rendered
+render: $(TEMPLATES) install_npm_swig
+		mkdir -p ./rendered/
 		$(foreach tplname,$(TEMPLATES),$(call swig_template,$(tplname)))
 
 publish: render build_style
