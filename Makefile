@@ -3,7 +3,7 @@ TEMPLATES = $(wildcard templates/tpl_*)
 EXPIRY = $(shell python -c "from datetime import *; print (datetime.utcnow() + timedelta(days=8)).strftime('%a, %d %b %Y %H:%M:%S GMT')")
 
 define swig_template
-		./node_modules/.bin/swig render $1  rendered/$(subst tpl_,,$(notdir $1));
+		./node_modules/.bin/swig render $1 > rendered/$(subst tpl_,,$(notdir $1));
 endef
 
 install_npm:
