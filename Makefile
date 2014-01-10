@@ -10,7 +10,7 @@ install_npm:
 		npm install swig minify
 
 clean_npm:
-		rm -rf node_modules
+		rm -rf ./node_modules/
 
 clean_prerun:
 		find . -name '.DS_Store' -delete
@@ -29,5 +29,5 @@ publish: render build_style
 		s3cmd sync -P --add-header="Expires:$(EXPIRY)" --delete-removed ./images/ s3://$(BUCKET)/images/
 
 clean: clean_npm clean_prerun
-		rm -rf rendered
+		rm -rf ./rendered/
 
