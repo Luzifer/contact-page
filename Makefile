@@ -23,7 +23,7 @@ render: $(TEMPLATES) install_npm
 		$(foreach tplname,$(TEMPLATES),$(call swig_template,$(tplname)))
 
 publish: render build_style
-		s3cmd sync --exclude=".git/*" --exclude="images/*" --exclude="lib/*" --exclude="Makefile" --exclude="style.css" -P ./rendered/ s3://$(BUCKET)/
+		s3cmd sync -P ./rendered/ s3://$(BUCKET)/
 		s3cmd sync -P ./files/ s3://$(BUCKET)/files/
 		s3cmd sync -P --add-header="Expires:$(EXPIRY)" --delete-removed ./lib/ s3://$(BUCKET)/lib/
 		s3cmd sync -P --add-header="Expires:$(EXPIRY)" --delete-removed ./images/ s3://$(BUCKET)/images/
