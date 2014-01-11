@@ -23,7 +23,18 @@ body {
   padding: 30px 20px 5px;
   position:relative;
   top: 5%;
-  width: 25%;
+
+  @media screen and (max-width: 1024px) {
+    & {
+      width: 50%;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    & {
+      width: 25%;
+    }
+  }
 }
 
 .photo {
@@ -55,7 +66,7 @@ body {
 
 .left {
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 1024px) {
     & {
       width: 100%;
     }
