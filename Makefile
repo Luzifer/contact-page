@@ -15,14 +15,13 @@ default: test
 install_npm_%:
 		npm install $*
 
-clean_npm:
-		rm -rf ./node_modules/
+clean_%:
+		rm -rf ./$*/
 
 clean_prerun:
 		find . -name '.DS_Store' -delete
 
-clean_testing:
-		rm -rf ./testing/
+clean: clean_node_modules clean_prerun clean_testing clean_publish clean_rendered
 
 build_style: install_npm_minify
 		mkdir -p ./rendered/
@@ -62,12 +61,6 @@ publish: clean compress
 				--add-header "Cache-Control: max-age=$(EXPIRY)" && \
 		s3cmd sync ./publish/ s3://$(BUCKET)/ \
 				-P --delete-removed
-
-clean_publish:
-		rm -rf ./publish/
-
-clean: clean_npm clean_prerun clean_testing clean_publish
-		rm -rf ./rendered/
 
 test: clean collect
 		mkdir -p ./testing/
