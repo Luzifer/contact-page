@@ -65,4 +65,6 @@ publish: clean compress
 test: clean collect
 		mkdir -p ./testing/
 		rsync -ar ./rendered/ ./testing/
+
+serve: test
 		cd ./testing/ && python -m SimpleHTTPServer 8000
