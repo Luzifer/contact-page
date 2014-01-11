@@ -14,14 +14,32 @@ body {
   background-color:#efefef;
 }
 
-#outer {height: 100%; overflow: hidden; position: relative; width: 100%;}
-#outer[id] {display: table; position: static;}
+#outer {
+  height: 100%; 
+  overflow: hidden; 
+  position: relative; 
+  width: 100%;
 
-#middle {position: absolute; top: 50%;} /* for quirk explorer only*/
-#middle[id] {display: table-cell; vertical-align: middle; width: 100%; position: static;}
+  &[id] {
+    display: table; 
+    position: static;
+  }
+}
+
+#middle {
+  position: absolute; 
+  top: 50%;
+
+  &[id] {
+    display: table-cell; 
+    vertical-align: middle; 
+    width: 100%; 
+    position: static;
+  }
+}
 
 .main {
-  box-shadow:         7px 7px 5px rgba(50, 50, 50, 0.5);
+  box-shadow: 7px 7px 5px rgba(50, 50, 50, 0.5);
   border: 1px solid #e1e1e1;
   width:920px;
   margin:20px auto;
@@ -63,18 +81,18 @@ body {
 .contact {
   font-size:13pt;
   line-height:1.4em;
-}
 
-.contact p {
-  padding-left: 30px;
-}
+  p {
+    padding-left: 30px;
 
-.contact p.img {
-  padding-left: 0;
-}
+    &.img {
+      padding-left: 0;
+    }
 
-.contact p .title {
-  margin-left: -15px;
+    .title {
+      margin-left: -15px;
+    }
+  }
 }
 
 .profileimg {
@@ -91,13 +109,13 @@ body {
 
 .buttons {
   margin-top:1em;
-}
 
-.buttons img {
-  width:32px;
-  height:32px;
-  border:0;
-  margin-top:1em;
+  img {
+    width:32px;
+    height:32px;
+    border:0;
+    margin-top:1em;
+  }
 }
 
 a {
@@ -108,11 +126,12 @@ a {
 .foot {
   text-align: center;
   padding-top: 15px;
+
+  a {
+    text-transform: uppercase;
+    color: #666;
+    font-size: 10px;
+    font-weight: 700;
+  }
 }
 
-.foot a {
-  text-transform: uppercase;
-  color: #666;
-  font-size: 10px;
-  font-weight: 700;
-}

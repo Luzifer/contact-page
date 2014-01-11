@@ -23,9 +23,9 @@ clean_prerun:
 
 clean: clean_node_modules clean_prerun clean_testing clean_publish clean_rendered
 
-build_style: install_npm_minify
+build_style: install_npm_node-sass
 		mkdir -p ./rendered/
-		./node_modules/.bin/minify style.css rendered/style.min.css
+		./node_modules/.bin/node-sass --output-style compressed --include-path scss ./scss/style.scss ./rendered/style.min.css
 
 render: $(TEMPLATES) install_npm_swig install_npm_minify
 		mkdir -p ./rendered/
