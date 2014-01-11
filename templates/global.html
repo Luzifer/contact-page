@@ -16,53 +16,14 @@
     <script type="text/javascript" charset="utf-8" src="jquery.min.js"></script>
     <link rel="stylesheet" href="slimbox2.min.css" type="text/css" media="screen" title="no title" charset="utf-8">
     <script src="slimbox2.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="flaticon.css" type="text/css" />
   </head>
   <body>
-    <div id="outer">
-      <div id="middle">
-        <div class="main">
-          <div class="head">
-            <div class="name center"><span class="navy">K</span>nut <span class="navy">A</span>hlers</div>
-            <div class="work center">Software-Entwickler, System- und Netzwerk-Administrator</div>
-          </div>
-          <div class="bright">
-            <p>
-              <a href="http://knut.in/facebook" title="Facebook-Profil aufrufen">
-                <img src="facebook.png" alt="Facebook-Profil aufrufen" title="Facebook-Profil aufrufen" height="32" width="32" />
-              </a>
-              <a href="http://knut.in/foursquare" title="Foursquare-Profil aufrufen">
-                <img src="foursquare.png" alt="Foursquare-Profil aufrufen" title="Foursquare-Profil aufrufen" height="32" width="32" />
-              </a>
-              <a href="http://knut.in/github" title="Github-Profil aufrufen">
-                <img src="github.png" alt="Github-Profil aufrufen" title="Github-Profil aufrufen" height="32" width="32" />
-              </a>
-              <a rel="author" href="http://knut.in/+" title="Google+ Profil aufrufen">
-                <img src="google-plus.png" width="32" height="32" title="Google+ Profil aufrufen" height="32" width="32" />
-              </a>
-              <a href="http://knut.in/linkedin" title="LinkedIn-Profil aufrufen">
-                <img src="linkedin.png" alt="LinkedIn-Profil aufrufen" title="LinkedIn-Profil aufrufen" height="32" width="32" />
-              </a>
-              <a href="http://knut.in/twitter" title="Twitter-Profil aufrufen">
-                <img src="twitter.png" alt="Twitter-Profil aufrufen" title="Twitter-Profil aufrufen" height="32" width="32" />
-              </a>
-              <a href="http://knut.in/xing" title="XING-Profil aufrufen">
-                <img src="xing.png" alt="XING-Profil aufrufen" title="XING-Profil aufrufen" height="32" width="32" />
-              </a>
-            </p>
-          </div>
-          <div class="left">
-            <div class="contact">
-              <p class="img">
-                <img src="http://www.gravatar.com/avatar/a3bf0e7acc39439f771eee680193bec3?s=250" class="profileimg" height="250" width="250" />
-              </p>
-            </div>
-          </div>
-          {% block content %}{% endblock %}
-          <div style="clear:both;"></div>
-          <div class="foot">
-          {% block footer %}{% endblock %}
-          </div>
-        </div>
+    <div class="main">
+      {% block content %}{% endblock %}
+      <div style="clear:both;"></div>
+      <div class="foot">
+      {% block footer %}{% endblock %}
       </div>
     </div>
   </body>

@@ -4,49 +4,49 @@ html, body {
   height: 100%;
   padding: 0;
   margin: 0;
-  overflow: hidden;
 }
 
 body {
+  background: #efefef url(IMG_1038.jpg) fixed no-repeat center;
+  background-size: cover;
   color: #333;
   font-family:'Ubuntu',sans-serif;
   font-size:7pt;
-  background-color:#efefef;
-}
-
-#outer {
-  height: 100%; 
-  overflow: hidden; 
-  position: relative; 
-  width: 100%;
-
-  &[id] {
-    display: table; 
-    position: static;
-  }
-}
-
-#middle {
-  position: absolute; 
-  top: 50%;
-
-  &[id] {
-    display: table-cell; 
-    vertical-align: middle; 
-    width: 100%; 
-    position: static;
-  }
 }
 
 .main {
+  background-color: rgba(255,255,255,0.85);
   box-shadow: 7px 7px 5px rgba(50, 50, 50, 0.5);
   border: 1px solid #e1e1e1;
-  width:920px;
-  margin:20px auto;
-  margin-bottom:0;
-  position:relative;
-  background-color:#fff;
+  left: 5%;
+  margin-bottom: 5%;
   padding: 30px 20px 5px;
+  position:relative;
+  top: 5%;
+  width: 25%;
+}
+
+.photo {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.icons {
+  p {
+    text-align: center;
+
+    a {
+      color: #666;
+
+      &:hover {
+        color: #333;
+      }
+
+      &:after, &:before {
+        font-size: 32px;
+      }
+    }
+  }
 }
 
 .head {
@@ -54,19 +54,20 @@ body {
 }
 
 .left {
-  width: 270px;
-  float:left;
-}
 
-.left2 {
-  width: 540px;
-  float: left;
-}
+  @media screen and (max-width: 500px) {
+    & {
+      width: 100%;
+    }
+  }
 
-.bright {
-  float:right;
-  width: 32px;
-  margin-left:60px;
+  @media screen and (min-width: 1024px) {
+    & {
+      width: 48%;
+      float:left;
+      margin-right: 1%;
+    }
+  }
 }
 
 .name {
