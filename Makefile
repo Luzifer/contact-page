@@ -1,4 +1,4 @@
-BUCKET = 'knut-ahlers.de'
+BUCKET = knut-ahlers.de
 EXPIRY_DAYS = 8
 
 TEMPLATES = $(wildcard templates/tpl_*)
@@ -39,7 +39,7 @@ collect: render build_style
 
 compress: collect
 		mkdir -p ./publish/
-		python aws-s3-gzip-compression.py ./rendered/ ./publish/
+		python scripts/aws-s3-gzip-compression.py ./rendered/ ./publish/
 
 publish: clean compress
 		s3cmd sync ./publish/ s3://$(BUCKET)/ \
