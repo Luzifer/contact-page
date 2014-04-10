@@ -4,7 +4,7 @@ https://keybase.io/luzifer
 
 I hereby claim:
 
-  * I am an admin of http://knut-ahlers.de
+  * I am an admin of https://knut-ahlers.de
   * I am luzifer (https://keybase.io/luzifer) on keybase.
   * I have a public key with fingerprint 507E A9D8 14AA ACA8 A55A  249F DC27 29FD D34B E99E
 
@@ -21,15 +21,15 @@ To claim this, I am signing this object:
         },
         "service": {
             "hostname": "knut-ahlers.de",
-            "protocol": "http:"
+            "protocol": "https:"
         },
         "type": "web_service_binding",
         "version": 1
     },
-    "ctime": 1396022360,
+    "ctime": 1397156338,
     "expire_in": 157680000,
-    "prev": "6cf06e34a5cf6dc0b6480c7aeba7ca30de33e097eed93a6186d4ad73c3dbd6e9",
-    "seqno": 7,
+    "prev": "6960f345ec558049d7fc8642976200b626f51b70ac2dd1e5a851c3d007b5dd6b",
+    "seqno": 14,
     "tag": "signature"
 }
 
@@ -39,22 +39,22 @@ with the aforementioned key, yielding the PGP signature:
 Version: GnuPG v1
 Comment: GPGTools - http://gpgtools.org
 
-owE1UV1IFGEUnTVt+8FQSUFMXMZUVtdldud/pQJTM4MeDMwVYflm5tvd0XVmnZ1d
-tUUlUrGw8iFR+hHEB/chAvvBNPp7EC0LNAvC1rUSCot6CIoiir4R+14u37nnnHsP
-dzB1G5ZkihdZ/ywf2xg1LTz6JmAn6Kv1UVxQpQ7cFcWb4WbxyooPakFNVnTchdME
-CwEvcQ4KACACDtA0cFK8VxKdrBMViaQEyPMQt+F+NWQokI0AQtAuqwhDH48sIbTi
-sMGvqqggqfJKnq9EvfBmA4ocJXA0S9I8TxMMJAHlZVlWBATBAYEgDGIIagpogYgd
-CJ+SvVDDO204AiOyCI2VjclbhGYlrJcCfwBqIbtkbBXUVF0V1QDq+XU96DKkekfQ
-4LZBwbPl4hFkRULBkSCCpLKq4C4HYoq6bNg6SJ4hnE6SIWw4bA/KGvTIBoNmGY5A
-zxgDI8iSEb1GBgrQopeRREJgKI4QWQAFgCKRhARJEhI8C6HEk4BxcIxEAYklRVIS
-JAbyuJGrVVFxF4vWBD5kGZJ9CtDDGsQ7z5r2JWOmJGx7SpJxOmzXzrT/B813m/8W
-7175+rQnt3J6sUQp901Pel6/fbDgeDLbWOfvv2CaMv/4niyOfPqSOyk/25jHfllu
-vqf3dn2uWZ0fyj8Uv5LwucWOlVszaVnx0SZTsd6WamnNGvq5f09Ggs+IpYOWe+2x
-jwcw88DDquHCc7+j1e15yd1zZkv33PLsjXXrc8erSPfypZDbPtJ7OtpAbuQUrdVF
-mdlYz9L6WtPwncySdGrqqGi/2DA30DyUs95bJlhv7xjPrO+7fHf8Ma0V3k/wpdaJ
-nDOx6pNY4tqb8wUHta5Gy3hfcI16N+MaPr70Irgop0zXZx+5/mG1xV2bNwb7B+Mv
-uwJjtQX92TXmMts/
-=nZjL
+owE1kWtIFFEUx3fVLINMWCOjQhgDNTadnZk7j0UozF0EK9DeoK53Zu7oqO1uO7Pr
+C7HnBwOzxEANS3obQRoRwaZIRbSmGJZRovXJzOzB+khEjO6I3S+He87v/z/ncC5t
+iDRFmMeSU5ff5UxdM7/pmxNNB51TMzWE6JGrCHsNUYZWgqK6i5HP61PdOmEnAMkh
+KMi8jYEQSpCHAECKERRZojgKB5lmRCQIiLASJR7NUGAbEWooTfXgHP64VBlns/Ya
+vDMri2YyHYLgwDX/SgFJPCPygKOBIACSRTRkFI7jJEiSPBRJ0gA15HPDEwjT5f5q
+VUE+otZK4GRAlZAxstF5FShz+/VdsKQc+bQ02ZjK6/PoHslTjmsluu7V7IZWr/Ia
+cAUSXas2LlF1y3hzrAhgrepxE3YbJiVdNXxttMDZAEvTvJVAlV7Vh1yqQQCO5Un8
+jD4ogC1ZgSUVmgFIAoAnGUHmFIlnGUrgWIokRZZiFWATORJKlCzbEIA8sEm0TJKc
+CGSZFQljsZNuD/Zm8JywGHtqarEb6n4fImrrzduiTOYIU/SaCON4pvUxcf9PirR1
+psef3zY2P4ylXpUOtG/fM3blavWZcAoTnopuHYosfR2jvv+hDW7eoka35J66kB98
+1jRYEO6vfFQYzJvuyGgj5hZQQ95u/Wf3vbgjCb1VEOwY7bp8bLqjKcHy8vT4Qt2+
+70sh0ye6P/5wbPz437XXR0o7vUl1EwNfv3XOTM4njbQV5Soh+0cleG6eSHCiyt+T
+juhRWLTpTzCn/UH2h6Zbtxczjzb3TD4d0pd/gYytnYkps91368MNN/ssdWzFROKT
+A4Vltp2pjYGL2cMFLXfmHK0WZ/rznvMbBxuWpOHmxaTe5UxniLrx5WxP06GsdGb2
+RXK1t8uy/35Iy7fOO45H/QM=
+=KgN2
 -----END PGP MESSAGE-----
 
 And finally, I am proving ownership of this host by posting or
