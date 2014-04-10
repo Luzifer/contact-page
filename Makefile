@@ -4,16 +4,13 @@ EXPIRY_DAYS = 8
 TEMPLATES = $(wildcard templates/tpl_*)
 EXPIRY = $(shell python -c "print $(EXPIRY_DAYS) * 86400")
 
-define swig_template
-		./node_modules/.bin/swig render $1 > rendered/tmp_$(subst tpl_,,$(notdir $1));
-		./node_modules/.bin/minify rendered/tmp_$(subst tpl_,,$(notdir $1)) rendered/$(subst tpl_,,$(notdir $1));
+define gen_template
+		./scripts/jinja.py $1 > rendered/tmp_$(subst tpl_,,$(notdir $1));
+		htmlmin rendered/tmp_$(subst tpl_,,$(notdir $1)) rendered/$(subst tpl_,,$(notdir $1));
 		rm rendered/tmp_$(subst tpl_,,$(notdir $1));
 endef
 
 default: test
-
-install_npm_%:
-		npm install $*
 
 clean_%:
 		rm -rf ./$*/
@@ -23,13 +20,13 @@ clean_prerun:
 
 clean: clean_node_modules clean_prerun clean_testing clean_publish clean_rendered
 
-build_style: install_npm_node-sass
+build_style:
 		mkdir -p ./rendered/
-		./node_modules/.bin/node-sass --output-style compressed --include-path scss ./scss/style.scss ./rendered/style.min.css
+		./scripts/sass_gen.py ./scss/style.scss > ./rendered/style.min.css
 
-render: $(TEMPLATES) install_npm_swig install_npm_minify
+render: $(TEMPLATES)
 		mkdir -p ./rendered/
-		$(foreach tplname,$(TEMPLATES),$(call swig_template,$(tplname)))
+		$(foreach tplname,$(TEMPLATES),$(call gen_template,$(tplname)))
 
 collect: render build_style
 		mkdir -p ./rendered/
