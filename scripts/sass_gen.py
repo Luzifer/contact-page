@@ -10,4 +10,6 @@ if sys.version_info < (3, 0):
 else:
     raw_input = input
 
-print compress(sass.compile_string(open(sys.argv[1], 'r').read()))
+file_contents = [open(x, 'r').read() for x in sys.argv[1:]]
+
+print compress(sass.compile_string('\n\n'.join(file_contents)))

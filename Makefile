@@ -3,6 +3,7 @@ EXPIRY_DAYS = 8
 
 TEMPLATES = $(wildcard templates/tpl_*)
 EXPIRY = $(shell python -c "print $(EXPIRY_DAYS) * 86400")
+SCSS_FILES = $(wildcard ./scss/*)
 
 define gen_template
 		./scripts/jinja.py $1 > rendered/tmp_$(subst tpl_,,$(notdir $1));
@@ -20,9 +21,9 @@ clean_prerun:
 
 clean: clean_node_modules clean_prerun clean_testing clean_publish clean_rendered
 
-build_style:
+build_style: $(SCSS_FILES)
 		mkdir -p ./rendered/
-		./scripts/sass_gen.py ./scss/style.scss > ./rendered/style.min.css
+		./scripts/sass_gen.py $(SCSS_FILES) > ./rendered/style.min.css
 
 render: $(TEMPLATES)
 		mkdir -p ./rendered/

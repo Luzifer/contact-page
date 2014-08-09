@@ -1,0 +1,50 @@
+#messenger_overview {
+
+  background-color: rgba(255, 255, 255, 0.85);
+  box-shadow: 7px 7px 5px rgba(50, 50, 50, 0.5);
+  display: none;
+  left: 580px;
+  line-height: 1.4em;
+  padding: 20px;
+  position: absolute;
+  top: 540px;
+  width: 400px;
+
+  table {
+    width: 100%;
+
+    tr {
+      th {
+        font-style: italic;
+        text-align: left;
+      }
+
+      &:not(:first-of-type) {
+        th {
+          padding-top: 20px;
+        }
+      }
+
+      td:first-child {
+        padding-left: 20px;
+      }
+    }
+  }
+
+  &:after, &:before {
+    right: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+
+  &:after {
+    border-right-color: rgba(255, 255, 255, 0.85);
+    border-width: 20px;
+    margin-top: -20px;
+  }
+}
