@@ -53,7 +53,8 @@ publish: clean compress
 		s3cmd sync ./publish/ s3://$(BUCKET)/ \
 				-P --exclude '*' --include '*.html' \
 				--add-header 'Content-Encoding:gzip' \
-				--mime-type="text/html; charset=utf-8" && \
+				--mime-type="text/html; charset=utf-8" \
+				--add-header "Cache-Control: max-age=3600" && \
 		s3cmd sync ./publish/ s3://$(BUCKET)/ \
 				-P --exclude '*' --include '*.png' --include '*.jpg' --include '*.gif' \
 				--add-header "Cache-Control: max-age=$(EXPIRY)" && \
