@@ -32,6 +32,8 @@ body {
 
   @media screen and (min-width: 1024px) {
     & {
+      max-width: 550px;
+      min-width: 450px;
       width: 25%;
     }
   }
