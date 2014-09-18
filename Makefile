@@ -1,4 +1,4 @@
-BUCKET = knut-ahlers.de
+BUCKET = luzifer.io
 EXPIRY_DAYS = 8
 
 TEMPLATES = $(wildcard templates/tpl_*)

@@ -3,13 +3,12 @@ python:
   - '2.7'
 env:
   global:
-    # AWS_KEY
-    - secure: VoeL2szyzhIoHYD7lQJnZWIyo3uX1OMeQgwOOEQzrRQ9TAVu2q/BPiEozKBLQRczM8A/hbRkTCuIHHIR+NrrHOJY2GB3P1OGEKApcOsqWEprOA9OicrwYsmHEIUF/OfTtPt1jccFQN9tpI0SiyaOOfNKE2loVv+oMCI6Wr63Y9Y=
-    # AWS_SECRET
-    - secure: kxt8ovHAD4PkLkJsWofPixKkq7QpVCECecLadNG2zeXHhjz1MCCk3nvuQdChYPtkse7io6cwFvVMIOuIuFnq9KukZMy0UrEAKUT1ObJHnd2gGzjXG3D86c+tmJACSskYmxpol58qy2piXecl31iiUMNAmkAFoiQ9LhI0/iTV78g=
-install: "pip install s3cmd==1.1.0-beta3 htmlmin==0.1.5 Jinja2==2.7.2 sass==2.2 csscompressor==0.9.3"
+    - secure: Oy1yYVUuTIvys3yQzvzRsnp+Ug3Z85TyAApIcXLixpPcbEhrjd3DSUFOPMEiF1oCSQcWME8MV/esW6Mfsa4NIj2zjj/u9Cbt/xW6zuePiEM+X/QfAEneOIMzSuiYrWqAtrU56ao77DJV76QETVG4iSBAFTbMbpW2OssBySBxbf4=
+    - secure: a3Tgcqi74Wg2eLmH83vqZ/Rb+cE6yRs4yXIw+HE0wooEZ86lGUWhUdsOgSKQAlaybiO2zlS7YAZGCZLw/sSuXIHpXr/+hqYurnsQ5H7f0HznLGnPK3t9YX21TzFw5Jag+VSyGWAD8NghY7Ux9MMKXeaKdb67XQ6DO+6cY1F5uTg=
+install: 
+  - "pip install s3cmd==1.1.0-beta3 htmlmin==0.1.5 Jinja2==2.7.2 sass==2.2 csscompressor==0.9.3"
 before_script:
-  - ./scripts/generate_s3cfg.sh
+  - "./scripts/generate_s3cfg.sh"
 script: make publish
 after_script:
   - rm ~/.s3cfg
