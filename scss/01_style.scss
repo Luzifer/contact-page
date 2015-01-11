@@ -80,16 +80,16 @@ body {
     text-align: center;
 
     a {
+      border: 1px solid #666;
+      border-radius: 50%;
+      display: inline-block;
       color: #666;
+      margin: 0 3px;
+      padding: 6px 0;
+      width: 31px;
 
       &:hover {
         color: #333;
-      }
-
-      &:after, &:before {
-        font-size: 32px;
-        margin-left: 10px;
-        margin-right: 10px;
       }
     }
   }
