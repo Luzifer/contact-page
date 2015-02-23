@@ -1,4 +1,5 @@
 BUCKET = luzifer.io
+#IPNS_HASH = QmdA83ioMpmqwSgW93YazdnhonnygF9FBVdqUPMzaSpKn2
 EXPIRY_DAYS = 8
 
 TEMPLATES = $(wildcard templates/tpl_*)
@@ -38,6 +39,10 @@ collect: render build_style
 compress: collect
 		mkdir -p ./publish/
 		python scripts/aws-s3-gzip-compression.py ./rendered/ ./publish/
+
+ipfs: render
+		#ipfs name publish $(IPNS_HASH) $(shell ipfs add -r -q ./rendered/ | tail -n1)
+		ipfs add -r -q ./rendered/ | tail -n1
 
 publish: clean compress
 		s3cmd sync ./publish/ s3://$(BUCKET)/ \
